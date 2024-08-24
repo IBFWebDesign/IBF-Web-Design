@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob's Pizza</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            background-image: url('Pizza2.jpg'); /* URL of your background image */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Keeps the image fixed as you scroll */
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 400vh; /* Minimum height of the viewport */
+        }
+        .logo {
+    width: 103.5px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0px; /* Space between logo and heading */
+    display: inline-block; /* Ensure it aligns with other inline elements */
+    position: absolute; /* Absolute positioning */
+    top: 1.26%; /* Center vertically */
+    left: 5%; /* Center horizontally */
+    z-index: 10; /* Ensure above other elements */
+}
+        
+        header {
+            margin-top: 0px; /* Space from the top */
+            text-align: center;
+        }
+
+        header h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center; /* Center text alignment */
+    padding: 24px; /* Increase padding for more space */
+    background-color: #883d04; /* Dark background for contrast */
+    color: #ffbd6da6; /* Light text color */
+    font-size: 3em; /* Increase font size */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    font-style: oblique;
+}
+
+.button-container {
+            position: absolute; /* Position absolutely */
+            top: 140px; /* Space from the top */
+            right: 20px; /* Space from the right */
+            display: flex; /* Use flexbox for horizontal alignment */
+            gap: 10px; /* Space between buttons */
+            z-index: 10; /* Ensure above other elements */
+        }
+
+        .button {
+            background-color: #875300; /* Background color */
+            color: rgb(255, 149, 149); /* Text color */
+            padding: 8px 16px; /* Padding for button effect */
+            text-align: center; /* Center align text */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 1.2em; /* Adjusted font size */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .button-about, .button-contact, .button-work, .button-get_started {
+            background-color: #ffb1b1; /* Background color */
+        }
+
+        .button:hover {
+            background-color: #dc7418; /* Darker color on hover */
+        }
+
+        .button a {
+            color: rgb(0, 0, 0); /* Ensure text color */
+            text-decoration: none; /* Remove underline from text */
+            display: block; /* Make the link cover the whole button area */
+            padding: 10px 20px; /* Padding inside the button */
+        }
+        section {
+            margin: 20px; /* Add margin for better spacing */
+        }
+
+
+
+        .centered-text {
+            position: absolute; /* Absolute positioning */
+            top: 15%; /* Center vertically */
+            left: 35%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #000000; /* Default text color */
+            font-size: 2em; /* Default font size */
+            font-family: 'Arial', sans-serif; /* Default font family */
+            padding: 20px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #c52a2a; /* Optional: background color for visibility */
+        }
+        
+        footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;  /* Center text alignment */
+    padding: 20px; /* Increase padding for more space */
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* Light text color */
+    font-size: 1.2em; /* Increase font size */
+    font-family: 'Arial', sans-serif; /* Font family */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+}
+
+footer a {
+    color: #ffcc00; /* Highlight color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+        .image-container {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 15%; /* Center vertically */
+            right: 9%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container img {
+            width: 270px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        .image-container2 {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 15%; /* Center vertically */
+            right: 8%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 50; /* Ensure the image is above other elements */
+        }
+
+        .image-container2 img {
+            width: 300px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        /* Custom Button */
+        .custom-button {
+            position: absolute; /* Absolute positioning */
+            top: 24%; /* Adjust vertical position */
+            left: 35%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the button */
+            background-color: #ca9e00; /* Background color */
+            color: #910707; /* Text color */
+            padding: 10px 20px; /* Padding for button effect */
+            font-size: 1.5em; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font family */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 10px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 10; /* Ensure above other elements */
+            transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+        }
+
+        .custom-button:hover {
+            background-color: #cfd203; /* Darker background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button button-about">
+            <a href="about.html">About</a>
+        </button>
+        <button class="button button-contact">
+            <a href="contact.html">Contact</a>
+        </button>
+        <button class="button button-work">
+            <a href="work.html">Menu</a>
+        </button>
+    </div>
+
+    <header>
+        <img src="Pizza1.jpg" alt="My Logo" class="logo">
+        <h1>Bob's Pizza</h1>
+    </header>
+    
+
+    <div class="centered-text">
+        <p> Welcome to Bob's Pizza</p>
+        <p> The best local made pizza you'll ever try</p>
+        <p> Call us and order your very own pizza with your very own toppings or see the menu, and your pizza will arrive faster than Pizza Hut and thats a promise!</p>
+    </div>
+    <div class="image-container">
+        <img src="Pizza3.jpg" alt="Company logo with THC letters">
+    </div>
+    <div class="image-container2">
+        <img src="White.jpg" alt="Company logo with THC letters">
+    </div>
+
+    <!-- Custom Button -->
+    <a href="contact.html" class="custom-button">Order Now</a>
+
+
+
+    <footer>
+        <p>&copy; 2024 Bob's Pizza. All rights reserved.</p>
+        <p>Designed by IBF Web Design</p>
+    </footer>
+    
+</body>
+</html>

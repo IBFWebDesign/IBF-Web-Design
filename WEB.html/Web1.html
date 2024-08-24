@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBF Web Design</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            background-image: url('Hacker.jpg'); /* URL of your background image */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Keeps the image fixed as you scroll */
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 400vh; /* Minimum height of the viewport */
+        }
+
+        header {
+            margin-top: 0px; /* Space from the top */
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 5em;
+            font: italic 2.9rem "Fira Sans", serif;
+            text-shadow: 2px 2px 4px #656464;
+            padding: 10px; /* Optional: space inside the footer */
+            box-shadow: 0 -1px 5px rgb(255, 0, 0); /* Optional: subtle shadow */
+        }
+
+        .button-container {
+            position: absolute; /* Position absolutely */
+            top: 80px; /* Space from the top */
+            right: 20px; /* Space from the right */
+            display: flex; /* Use flexbox for horizontal alignment */
+            gap: 10px; /* Space between buttons */
+            z-index: 10; /* Ensure above other elements */
+        }
+
+        .button {
+            background-color: #ffffff; /* Background color */
+            color: rgb(0, 0, 0); /* Text color */
+            padding: 8px 16px; /* Padding for button effect */
+            text-align: center; /* Center align text */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 1.2em; /* Adjusted font size */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .button-about, .button-contact, .button-work, .button-get_started {
+            background-color: #ffffff; /* Background color */
+        }
+
+        .button:hover {
+            background-color: #814bff; /* Darker color on hover */
+        }
+
+        .button a {
+            color: rgb(0, 0, 0); /* Ensure text color */
+            text-decoration: none; /* Remove underline from text */
+            display: block; /* Make the link cover the whole button area */
+            padding: 10px 20px; /* Padding inside the button */
+        }
+
+        section {
+            margin: 20px; /* Add margin for better spacing */
+        }
+
+        .centered-text {
+            position: absolute; /* Absolute positioning */
+            top: 12%; /* Center vertically */
+            left: 30%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #000000; /* Default text color */
+            font-size: 2em; /* Default font size */
+            font-style: normal;
+            padding: 20px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #0181d1; /* Optional: background color for visibility */
+        }
+
+        .centered-text1 {
+            position: absolute; /* Position absolutely within its container */
+            top: 39%; /* Adjust vertical position as needed */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+            text-align: center;
+            color: #000000;
+            font-size: 1.75em;
+            font-family: 'Arial', sans-serif;
+            padding: 20px; /* Increase padding to make it more spacious */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure it appears above other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+            background-color: #0181d1; /* Solid background color */
+            width: 80%; /* Set width to make it wider */
+        }
+        
+        .centered-text2 {
+            position: absolute; /* Position absolutely within its container */
+            top: 50%; /* Adjust vertical position as needed */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the element both horizontally and vertically */
+            text-align: center;
+            color: #000000;
+            font-size: 1.75em;
+            font-family: 'Arial', sans-serif;
+            padding: 20px; /* Increase padding to make it more spacious */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure it appears above other elements */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+            background-color: #0db882; /* Solid background color */
+            width: 80%; /* Set width to make it wider */
+        }
+        .centered-text3 {
+            position: absolute; /* Absolute positioning */
+            top: 26%; /* Center vertically */
+            left: 36%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #ffffff; /* Default text color */
+            font-size: 1.15em; /* Default font size */
+            font-style: oblique;
+            padding: 18px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #0181d1; /* Optional: background color for visibility */
+        }
+        .centered-text4 {
+            position: absolute; /* Absolute positioning */
+            top: 61.5%; /* Center vertically */
+            left: 65%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #ffffff; /* Default text color */
+            font-size: 1em; /* Default font size */
+            font-family: 'Arial', sans-serif; /* Default font family */
+            padding: 20px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #120e82; /* Optional: background color for visibility */
+        }
+        .centered-text5 {
+            position: absolute; /* Absolute positioning */
+            top: 76%; /* Center vertically */
+            left: 30%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #ffffff; /* Default text color */
+            font-size: 1em; /* Default font size */
+            font-family: 'Arial', sans-serif; /* Default font family */
+            padding: 20px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #120e82; /* Optional: background color for visibility */
+        }
+
+        .centered-text6 {
+            position: absolute; /* Absolute positioning */
+            top: 88%; /* Center vertically */
+            left: 65%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset by 50% of its own dimensions */
+            text-align: center; /* Center text alignment */
+            color: #ffffff; /* Default text color */
+            font-size: 1em; /* Default font size */
+            font-family: 'Arial', sans-serif; /* Default font family */
+            padding: 20px; /* Default padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with slight transparency */
+            border-radius: 10px; /* Rounded corners */
+            z-index: 5; /* Ensure above other elements */
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+            background-color: #120e82; /* Optional: background color for visibility */
+        }
+       
+        .logo {
+    width: 83.5px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and heading */
+    display: inline-block; /* Ensure it aligns with other inline elements */
+    position: absolute; /* Absolute positioning */
+    top: 0%; /* Center vertically */
+    left: 5%; /* Center horizontally */
+}
+        
+        footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center; /* Center text alignment */
+    padding: 20px; /* Increase padding for more space */
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* Light text color */
+    font-size: 1.2em; /* Increase font size */
+    font-family: 'Arial', sans-serif; /* Font family */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+}
+
+footer a {
+    color: #ffcc00; /* Highlight color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+        .image-container {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 12.5%; /* Center vertically */
+            right: 10%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container img {
+            width: 270px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        .image-container2 {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 27%; /* Center vertically */
+            right: 10%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container2 img {
+            width: 270px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        .image-container3 {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 62%; /* Center vertically */
+            right: 57%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container3 img {
+            width: 500px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        .image-container4 {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 76%; /* Center vertically */
+            right: 5.5%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container4 img {
+            width: 400px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+        .image-container5 {
+            position: absolute; /* Fixes the position relative to the viewport */
+            top: 88%; /* Center vertically */
+            right: 60%; /* Align to the right */
+            transform: translateY(-50%); /* Offset by 50% of its own height */
+            z-index: 100; /* Ensure the image is above other elements */
+        }
+
+        .image-container5 img {
+            width: 450px; /* Adjust the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+        }
+
+        /* Custom Button */
+        .custom-button {
+            position: absolute; /* Absolute positioning */
+            top: 34%; /* Adjust vertical position */
+            left: 37%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the button */
+            background-color: #ffffff; /* Background color */
+            color: #000000; /* Text color */
+            padding: 10px 20px; /* Padding for button effect */
+            font-size: 1.5em; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font family */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 10px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 10; /* Ensure above other elements */
+            transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+        }
+
+        .custom-button:hover {
+            background-color: #37c57c; /* Darker background color on hover */
+        }
+        .custom-button2 {
+            position: absolute; /* Absolute positioning */
+            top: 45%; /* Adjust vertical position */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the button */
+            background-color: #ffffff; /* Background color */
+            color: #000000; /* Text color */
+            padding: 10px 20px; /* Padding for button effect */
+            font-size: 1.5em; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font family */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 10px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 10; /* Ensure above other elements */
+            transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+        }
+
+        .custom-button2:hover {
+            background-color: #37c57c; /* Darker background color on hover */
+        }
+        .custom-button3 {
+            position: absolute; /* Absolute positioning */
+            top: 95%; /* Adjust vertical position */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center the button */
+            background-color: #ffffff; /* Background color */
+            color: #000000; /* Text color */
+            padding: 10px 20px; /* Padding for button effect */
+            font-size: 1.5em; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font family */
+            text-decoration: none; /* Remove underline from text */
+            border-radius: 10px; /* Rounded corners */
+            border: none; /* Remove default border */
+            cursor: pointer; /* Pointer cursor on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            z-index: 10; /* Ensure above other elements */
+            transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+        }
+        .custom-button3:hover {
+            background-color: #37c57c; /* Darker background color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button button-about">
+            <a href="about.html">About</a>
+        </button>
+        <button class="button button-contact">
+            <a href="contact.html">Contact</a>
+        </button>
+        <button class="button button-work">
+            <a href="work.html">See My Work</a>
+        </button>
+        <button class="button button-work">
+            <a href="price.html">Prices</a>
+        </button>
+    </div>
+
+    <header>
+        <img src="Screenshot 2024-08-21 221401.png" alt="My Logo" class="logo">
+        <h1>IBF Web Design</h1>
+    </header>
+    
+
+    <div class="centered-text">
+        <p> Welcome to IBF Web Design</p>
+        <p> I build custom sites to help you stand out</p>
+        <p> Whatever the occasion may be</p>
+    </div>
+
+    <div class="centered-text1">
+        <p>I make:</p>
+        <p>affordable, fast, and eye-catching websites!</p>
+    </div>
+
+    <div class="centered-text2">
+        <p>These are the steps of my magic:</p>
+    </div>
+    
+    <div class="centered-text3">
+        <p>Self operated Web Designer</p>
+        <p>located in Katy, Texas</p>
+        <p>you are probably wondering what can this random 18 year old do? Can I even make a website? Well, the answer is already infront of you this website that you are on was created by my hands, brain, and of course some coding. I graduated from high school May 31 2024 with some computer science experence, and I always had a love for Web Designing. But thats enough about me, know tell me about you, what services can I help you with. I can make a variety of websites. You name it, I make it. All you have to do is send me pictures you want on your website(optional), and details on how you would like to have it done, and let me work my magic, if you are not satisfied please do let me know on how I could be better, but other than that click that contact button and CONTACT ME I WILL NOT DISAPPOINT!!!</p>
+    </div>
+
+    <div class="centered-text4">
+        <p> Step One:</p>
+        <p> Start by telling me a little about yourself and business, and I'll begin designing your website. </p>
+        <p> All I need is:</p>
+        <p> Your business name </p>
+        <p> Logo(If you do not have a logo don't worry I can make you one free of charge) </p>
+        <p> Description of your business </p>
+        <p> And for a cherry ontop videos or pictures of your business(Optional) </p>
+        
+    </div>
+
+    <div class="centered-text5">
+        <p> Step Two:</p>
+        <p> During my process of designing your amazing site I'll keep you updated </p>
+        <p> I'll send you pictures and videos of your site to make sure you are satisfied </p>
+        <p> If you have any recommendations feel free to let me know and I will try to grant your wishes </p>
+        <p> (Thats why they call me Gene) </p>
+        
+    </div>
+
+    <div class="centered-text6">
+        <p> Step Three:</p>
+        <p> If there are any last mineut changes now is the time to make your 3rd wish  </p>
+        <p> If your heart is happy and have a smile on your face </p>
+        <p> and payment is done, I'll connect your domain and publish your site for your valuble customers to see!</p>
+    </div>
+
+    <div class="image-container">
+        <img src="ibrahim.jpg" alt="Company logo with THC letters">
+    </div>
+    <div class="image-container2">
+        <img src="lucas-beck-_Y_paD-ELIg-unsplash.jpg" alt="Company logo with THC letters">
+    </div>
+    <div class="image-container3">
+        <img src="blake-wisz-GFrBMipOd_E-unsplash.jpg" alt="Company logo with THC letters">
+    </div>
+    <div class="image-container4">
+        <img src="andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="Company logo with THC letters">
+    </div>
+    <div class="image-container5">
+        <img src="vitaly-gariev-WAq7spN2wYk-unsplash.jpg" alt="Company logo with THC letters">
+    </div>
+    
+    
+
+    <!-- Custom Button -->
+    <a href="contact.html" class="custom-button">Get Started</a>
+    <a href="contact.html" class="custom-button2">Get Started</a>
+    <a href="contact.html" class="custom-button3">Interested yet?</a>
+
+
+    <footer>
+        <p>&copy; 2024 IBF Web Design. All rights reserved.</p>
+        <p>Designed by IBF Web Design</p>
+    </footer>
+    
+</body>
+</html>
